@@ -8,6 +8,8 @@ module Committee
         Committee::Drivers::HyperSchema.new
       when :open_api_2
         Committee::Drivers::OpenAPI2.new
+      when :open_api_3
+        Committee::Drivers::OpenAPI3.new
       else
         raise ArgumentError, %{Committee: unknown driver "#{name}".}
       end
@@ -52,7 +54,7 @@ module Committee
 
     # Schema is a base class for driver schema implementations.
     class Schema
-      # A link back to the derivative instace of Committee::Drivers::Driver
+      # A link back to the derivative instance of Committee::Drivers::Driver
       # that create this schema.
       def driver
         raise "needs implementation"

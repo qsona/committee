@@ -38,7 +38,7 @@ module Committee
           opts.separator "Options:"
 
           # required
-          opts.on("-d", "--driver NAME", "name of driver [open_api_2|hyper_schema]") { |name|
+          opts.on("-d", "--driver NAME", "name of driver [open_api_2|open_api_3|hyper_schema]") { |name|
             options[:driver] = name.to_sym
           }
 
